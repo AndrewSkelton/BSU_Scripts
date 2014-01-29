@@ -1,0 +1,22 @@
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat/Flowcell_A_1 -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_1_1.fastq.gz Flowcell_A_1_2.fastq.gz &
+
+
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_2_1.fastq.gz Flowcell_A_2_2.fastq.gz &
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_3_1.fastq.gz Flowcell_A_3_2.fastq.gz &
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_4_1.fastq.gz Flowcell_A_4_2.fastq.gz &
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_5_1.fastq.gz Flowcell_A_5_2.fastq.gz &
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_6_1.fastq.gz Flowcell_A_6_2.fastq.gz &
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_7_1.fastq.gz Flowcell_A_7_2.fastq.gz &
+tophat -r 44 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_A_8_1.fastq.gz Flowcell_A_8_2.fastq.gz &
+
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_1_1.fastq.gz Flowcell_B_1_2.fastq.gz &
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_2_1.fastq.gz Flowcell_B_2_2.fastq.gz &
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_3_1.fastq.gz Flowcell_B_3_2.fastq.gz &
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_4_1.fastq.gz Flowcell_B_4_2.fastq.gz &
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_5_1.fastq.gz Flowcell_B_5_2.fastq.gz &
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_6_1.fastq.gz Flowcell_B_6_2.fastq.gz &
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_7_1.fastq.gz Flowcell_B_7_2.fastq.gz &
+tophat -r 94 --phred64-quals --b2-very-sensitive -o /data/customers/Young/Project/Tophat -G /data/genomes/grch37/genes.gtf /data/genomes/grch37/grch37 Flowcell_B_8_1.fastq.gz Flowcell_B_8_2.fastq.gz &
+
+--transcriptome-index          <bwtidx>    (transcriptome bowtie index)
+
