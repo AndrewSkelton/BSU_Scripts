@@ -54,9 +54,25 @@ batches_phase_2 <- batches[96:173]
 batches_phase_2 <- gsub(5, 1, batches_phase_2); batches_phase_2 <- gsub(6, 2, batches_phase_2)
 
 ##'CHECK FOR BATCH EFFECT NOW (AMPLIFICATION BATCHES)
+pdf("Post_Amplification_Correction_Plots.pdf")
+PCA_data <- phase_1
+colnames(PCA_data) <- batches_phase_1
+#Pre Amplification Correction
+#Post Phase Correction
+plotSampleRelation(PCA_data, method= 'cluster' , cv.Th=0, main="Pre Amplification Correction - Phase 1", cex=.4)
+plotSampleRelation(PCA_data, method= 'mds' , cv.Th=0, main="Pre Amplification Correction - Phase 1")
+dev.off()
+####
 
+treatments  <- c("A", "B", "C", "D", "E")
+array_names <- c("D", "C", "B", "A", "A", "B", "C", "D", "D", "C", "B", "A", "A", "B", "C", "D", "D", "C", "B", "B", "A", "B", "C", "D", "C", "C", "B", "A", "A", "B", "C", "D", "D", "C", "B", "A", "B", "C", "C", "D", "D", "C", "B", "A", "A", "B", "C", "D", "D", "C", "B", "A", "C", "C", "C", "B", "B", "A", "A", "B", "C", "B", "A", "B", "C", "B", "D", "B", "C", "C", "B", "C", "B", "A", "C", "C", "D", "D", "C", "B", "B", "A", "A", "B", "C", "D", "D", "C", "D", "A", "B", "A", "D", "C", "C", "A", "C", "C", "B", "A", "C", "D", "E", "C", "B", "E", "E", "E", "E", "E", "E", "E", "E", "D", "B", "D", "E", "D", "A", "B", "D", "C", "C", "C", "D", "C", "E", "C", "B", "E", "E", "E", "C", "A", "D", "D", "A", "C", "D", "E", "B", "C", "E", "A", "C", "D", "E", "C", "C", "D", "A", "A", "A", "B", "E", "C", "A", "B", "A", "E", "C", "A", "C", "D", "C", "C", "B", "C", "B", "E", "D", "D", "B")
 
-
+##'BATCH CORRECTION (AMPLIFICATION)
+pheno            <- data.frame(sample = c(1:95), outcome = array_names[1:95], batch = batches_phase_1)
+rownames(pheno)  <- colnames(phase_1)[1:95]
+batch = pheno$batch
+mod = model.matrix(~as.factor(outcome), data=pheno)
+combat_edata = ComBat(dat=filtered_analysis_ready_data, batch=batch, mod=mod, numCovs=NULL, par.prior=TRUE, prior.plots=FALSE)
 
 
 
