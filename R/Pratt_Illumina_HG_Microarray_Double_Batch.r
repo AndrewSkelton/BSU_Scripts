@@ -69,12 +69,19 @@ array_names <- c("D", "C", "B", "A", "A", "B", "C", "D", "D", "C", "B", "A", "A"
 
 ##'BATCH CORRECTION (AMPLIFICATION)
 pheno            <- data.frame(sample = c(1:95), outcome = array_names[1:95], batch = batches_phase_1)
-rownames(pheno)  <- colnames(phase_1)[1:95]
+rownames(pheno)  <- colnames(phase_1)
 batch = pheno$batch
 mod = model.matrix(~as.factor(outcome), data=pheno)
-combat_edata = ComBat(dat=filtered_analysis_ready_data, batch=batch, mod=mod, numCovs=NULL, par.prior=TRUE, prior.plots=FALSE)
+phase_1_combat_edata = ComBat(dat=phase_1, batch=batch, mod=mod, numCovs=NULL, par.prior=TRUE, prior.plots=FALSE)
 
+pheno            <- data.frame(sample = c(1:78), outcome = array_names[1:78], batch = batches_phase_2)
+rownames(pheno)  <- colnames(phase_2)
+batch = pheno$batch
+mod = model.matrix(~as.factor(outcome), data=pheno)
+phase_2_combat_edata = ComBat(dat=phase_2, batch=batch, mod=mod, numCovs=NULL, par.prior=TRUE, prior.plots=FALSE)
+##'END BATCH CORRECTION (AMPLIFICATION)
 
+merged_data_post_amp <- cbind(phase_1_combat_edata, phase_2_combat_edata)
 
 
 
