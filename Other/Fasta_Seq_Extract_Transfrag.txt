@@ -1,0 +1,9 @@
+
+##Find Transfrag ID of sequence of interest
+
+##Grep the entries and pipe into a sequence GTF
+##Example : $ grep TCONS_00033088 merged.gtf > TCONS_00033088.gtf
+
+
+##Use gffread to extract a consensus sequence. 
+gffread -w TCONS_00033088.fa -g /opt/databases/genomes/hg19/bt2_th_hg19_ucsc/genome.fa TCONS_00033088.gtf 
