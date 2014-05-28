@@ -1,11 +1,14 @@
 #!/bin/bash
 #$ -cwd -V
-#$ -pe smp 5
-#$ -l h_vmem=20G
+#$ -pe smp 10
+#$ -l h_vmem=50G
 #$ -e ~/log/
 #$ -o ~/log
 source ~/.bash_profile
 
-cufflinks -p 4 -q --max-bundle-frags 30000000 -u -b /opt/databases/genomes/hg19/bt2_th_hg19_ucsc/genome.fa \
-		  --GTF-guide /opt/databases/genomes/hg19/bt2_th_hg19_ucsc/genes.gtf \
-		  -o ../Cufflinks/$1 $1/accepted_hits.bam
+dir="${1%.bam}"
+
+cufflinks -p 10 -q --max-bundle-frags 30000000 --GTF-guide /opt/databases/genomes/Ensembl/Homo_sapiens.GRCh37.Ensembl.gtf \
+		  -o ./Cufflinks/$dir ./Tophat/accepted_hits/$1
+
+mv ./Cufflinks/$dir/transcripts.gtf ./Cufflinks/transcripts/$dir'.gtf'
